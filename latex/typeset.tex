@@ -1,0 +1,44 @@
+\documentclass[10pt,adobefonts,fancyhdr,hyperref,UTF8]{ctexbook}
+
+\makeatletter
+\input{format.cls}
+\makeatother
+
+\begin{document}
+\sloppy
+\newcommand\mybooktitle{Sqlite3.8.8 Source Code}
+\newcommand\BookTitle{Sqlite3.8.8 Source Code}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RE]{\normalfont\small\rmfamily\nouppercase{\leftmark}}
+\fancyhead[LO]{\normalfont\small\rmfamily\nouppercase{\rightmark}}
+\fancyhead[LE,RO]{\thepage}
+\fancyfoot[LE,LO]{\small\normalfont\youyuan\BookTitle  by LiuZ}
+\fancyfoot[RE,RO]{\textsf{\small \color{blue} http://ilz.me/}}
+
+\makeatletter
+\@openrightfalse
+\makeatother
+
+\frontmatter % 开始前言目录，页码用罗马数字
+
+%\include{title}
+
+\tableofcontents
+
+\mainmatter % 开始正文，页码用阿拉伯数字
+
+%\graphicspath{{diagrams/}}
+\chapter{sqlite3.h}
+\include{sqlite3h}
+\chapter{sqlite3.c}
+\include{sqlite3c}
+\chapter{sqlite3ext.h}
+\include{sqlite3ext}
+\chapter{shell.c}
+\include{shell}
+
+\appendix % 开始附录，章用字母编号
+\printindex
+
+\end{document}
